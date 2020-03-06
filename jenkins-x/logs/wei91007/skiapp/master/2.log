@@ -1,0 +1,135 @@
+
+Showing logs for build [32mwei91007-skiapp-master-qpn6q-2[0m stage [32mfrom-build-pack[0m and container [32mstep-credential-initializer-zbq2w[0m
+{"level":"warn","ts":1583471643.6745362,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/0.8.0-**-support-backwards-incompats\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1583471643.6751187,"logger":"fallback-logger","caller":"creds-init/main.go:40","msg":"Credentials initialized."}
+
+Showing logs for build [32mwei91007-skiapp-master-qpn6q-2[0m stage [32mfrom-build-pack[0m and container [32mstep-working-dir-initializer-5smp7[0m
+{"level":"warn","ts":1583471644.4879541,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/HEAD: no such file or directory"}
+{"level":"info","ts":1583471644.4892619,"logger":"fallback-logger","caller":"bash/main.go:64","msg":"Successfully executed command \"sh -c mkdir -p /workspace/source\"; output "}
+
+Showing logs for build [32mwei91007-skiapp-master-qpn6q-2[0m stage [32mfrom-build-pack[0m and container [32mstep-place-tools[0m
+
+Showing logs for build [32mwei91007-skiapp-master-qpn6q-2[0m stage [32mfrom-build-pack[0m and container [32mstep-git-source-wei91007-skiapp-master-qpn6q-6wsn5[0m
+{"level":"warn","ts":1583471652.7167463,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/0.8.0-**-support-backwards-incompats\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1583471654.8437786,"logger":"fallback-logger","caller":"git/git.go:103","msg":"Successfully cloned https://github.com/********/skiapp.git @ v0.0.43 in path /workspace/source"}
+
+Showing logs for build [32mwei91007-skiapp-master-qpn6q-2[0m stage [32mfrom-build-pack[0m and container [32mstep-git-merge[0m
+Using SHAs from PULL_REFS=master:c28e5f4c91954218f265e415f9fa065b0b937fce
+WARNING: no SHAs to merge, falling back to initial cloned commit
+
+Showing logs for build [32mwei91007-skiapp-master-qpn6q-2[0m stage [32mfrom-build-pack[0m and container [32mstep-setup-jx-git-credentials[0m
+Generated Git credentials file /workspace/xdg_config/git/credentials
+
+Showing logs for build [32mwei91007-skiapp-master-qpn6q-2[0m stage [32mfrom-build-pack[0m and container [32mstep-build-npmrc[0m
+Command "credential" is deprecated, it will be removed on Jun 1 2020.  This is replaced by Tekton's mounted secrets
+WARNING: failed to find Secret npm-token in namespace **
+
+Showing logs for build [32mwei91007-skiapp-master-qpn6q-2[0m stage [32mfrom-build-pack[0m and container [32mstep-build-npm-install[0m
+npm WARN skiapp@1.0.0 No repository field.
+npm WARN skiapp@1.0.0 No license field.
+
+added 152 packages from 599 contributors and audited 269 packages in 7.266s
+found 0 vulnerabilities
+
+
+Showing logs for build [32mwei91007-skiapp-master-qpn6q-2[0m stage [32mfrom-build-pack[0m and container [32mstep-build-npm-test[0m
+
+> skiapp@1.0.0 test /workspace/source
+> ./node_modules/mocha/bin/mocha tests/ --exit
+
+Server running at http://localhost:8080
+
+
+  GET Home page
+    ✓ Should return a 200 ok response (47ms)
+
+
+  1 passing (88ms)
+
+
+Showing logs for build [32mwei91007-skiapp-master-qpn6q-2[0m stage [32mfrom-build-pack[0m and container [32mstep-build-container-build[0m
+[36mINFO[0m[0000] Downloading base image node:9-slim           
+ERROR: logging before flag.Parse: E0306 05:14:30.520420      11 metadata.go:142] while reading 'google-dockercfg' metadata: http status code: 404 while fetching url http://metadata.google.internal./computeMetadata/v1/instance/attributes/google-dockercfg
+ERROR: logging before flag.Parse: E0306 05:14:30.523985      11 metadata.go:159] while reading 'google-dockercfg-url' metadata: http status code: 404 while fetching url http://metadata.google.internal./computeMetadata/v1/instance/attributes/google-dockercfg-url
+2020/03/06 05:14:30 No matching credentials were found, falling back on anonymous
+[36mINFO[0m[0001] Error while retrieving image from cache: getting file info: stat /workspace/sha256:0e0175bbe4f8d9d104590d8d2c591017874e30977cb71aaff1cf6fa99479575c: no such file or directory 
+[36mINFO[0m[0001] Downloading base image node:9-slim           
+2020/03/06 05:14:31 No matching credentials were found, falling back on anonymous
+[36mINFO[0m[0002] Executing 0 build triggers                   
+[36mINFO[0m[0002] cmd: EXPOSE                                  
+[36mINFO[0m[0002] Adding exposed port: 8080/tcp                
+[36mINFO[0m[0002] Using files from context: [/workspace/source] 
+[36mINFO[0m[0003] Skipping unpacking as no commands require it. 
+[36mINFO[0m[0003] Taking snapshot of full filesystem...        
+[36mINFO[0m[0005] ENV PORT 8080                                
+[36mINFO[0m[0005] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0005] EXPOSE 8080                                  
+[36mINFO[0m[0005] cmd: EXPOSE                                  
+[36mINFO[0m[0005] Adding exposed port: 8080/tcp                
+[36mINFO[0m[0005] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0005] WORKDIR /usr/src/app                         
+[36mINFO[0m[0005] cmd: workdir                                 
+[36mINFO[0m[0005] Changed working directory to /usr/src/app    
+[36mINFO[0m[0005] Creating directory /usr/src/app              
+[36mINFO[0m[0005] Taking snapshot of files...                  
+[36mINFO[0m[0005] Using files from context: [/workspace/source] 
+[36mINFO[0m[0005] COPY . .                                     
+[36mINFO[0m[0007] Taking snapshot of files...                  
+[36mINFO[0m[0008] CMD ["npm", "start"]                         
+[36mINFO[0m[0008] No files changed in this command, skipping snapshotting. 
+2020/03/06 05:14:39 existing blob: sha256:7d083412657baa2dafba8d093034ef26f9ed2c90fb6ed95f76bb55aff03ed429
+2020/03/06 05:14:39 existing blob: sha256:e01bd28a434b56ffd2a3fe9aa99b9b69aecca69904843edd30b1ee7150d79904
+2020/03/06 05:14:39 existing blob: sha256:a88538b9cd05cfa611e43a25582a95ad7879f6fa708b0386a26b71ee62235bb3
+2020/03/06 05:14:39 existing blob: sha256:196b8e3c919d5639193ba6c6e54774528942041bbc37606631a2250502985c3c
+2020/03/06 05:14:39 existing blob: sha256:5bba3ecb4cd6374a19da45f2a3db0a9c0804984358b3bb4b666c28944016e5ff
+2020/03/06 05:14:40 pushed blob: sha256:8099cee472ae1c61570471d9d77995ba432b1b21c716a943eca6d552f0ff1204
+2020/03/06 05:14:40 pushed blob: sha256:55129cded9c290077bba2b7b849277b077310a17353bc72353360a527b7acb00
+2020/03/06 05:14:41 pushed blob: sha256:c7a15337465bd73259b88a67b356c7d82e39af781268b57c494e62bf3408ad8c
+2020/03/06 05:14:42 gcr.io/jenkinsx0305/skiapp:0.0.43: digest: sha256:0125f474b4dee98945b3e45969129ca0a30135ae40ceadacbcd1a59db516ea4c size: 1407
+
+Showing logs for build [32mwei91007-skiapp-master-qpn6q-2[0m stage [32mfrom-build-pack[0m and container [32mstep-build-post-build[0m
+no CVE provider running in the current ** namespace so skip adding image to be analysed
+
+Showing logs for build [32mwei91007-skiapp-master-qpn6q-2[0m stage [32mfrom-build-pack[0m and container [32mstep-promote-changelog[0m
+Converted /workspace/source/charts/skiapp to an unshallow repository
+Generating change log from git ref 2d074ce06204fac9a7423a1375245f005014d96d => bd78985c9fdce70cba4ef106cc0fff78931556c2
+Associating user x-0 in users.jenkins.io with email wei_wu@optum.com to git GitProvider user with login -0 as emails match
+Adding label jenkins.io/git-github-userid=-0 to user x-0 in users.jenkins.io
+WARNING: Failed to enrich commit c28e5f4c91954218f265e415f9fa065b0b937fce with issues: User.jenkins.io "x-0" is invalid: metadata.labels: Invalid value: "-0": a valid label must be an empty string or consist of alphanumeric characters, '-', '_' or '.', and must start and end with an alphanumeric character (e.g. 'MyValue',  or 'my_value',  or '12345', regex used for validation is '(([A-Za-z0-9][-A-Za-z0-9_.]*)?[A-Za-z0-9])?')
+Associating user x-0 in users.jenkins.io with email wei_wu@optum.com to git GitProvider user with login -0 as emails match
+Adding label jenkins.io/git-github-userid=-0 to user x-0 in users.jenkins.io
+WARNING: Failed to enrich commit c28e5f4c91954218f265e415f9fa065b0b937fce with issues: User.jenkins.io "x-0" is invalid: metadata.labels: Invalid value: "-0": a valid label must be an empty string or consist of alphanumeric characters, '-', '_' or '.', and must start and end with an alphanumeric character (e.g. 'MyValue',  or 'my_value',  or '12345', regex used for validation is '(([A-Za-z0-9][-A-Za-z0-9_.]*)?[A-Za-z0-9])?')
+Finding issues in commit messages using git format
+WARNING: No release found for ********/skiapp and tag v0.0.43 so creating a new release
+Updated the release information at https://github.com/********/skiapp/releases/tag/v0.0.43
+generated: /workspace/source/charts/skiapp/templates/release.yaml
+Created Release skiapp-0-0-43 resource in namespace **
+Updating PipelineActivity ********-skiapp-master-2 with version 0.0.43
+Updated PipelineActivities ********-skiapp-master-2 with release notes URL: https://github.com/********/skiapp/releases/tag/v0.0.43
+
+Showing logs for build [32mwei91007-skiapp-master-qpn6q-2[0m stage [32mfrom-build-pack[0m and container [32mstep-promote-helm-release[0m
+WARNING: No $CHART_REPOSITORY defined so using the default value of: http://jenkins-x-chartmuseum:8080
+Adding missing Helm repo: storage.googleapis.com https://storage.googleapis.com/chartmuseum.jenkins-x.io
+Successfully added Helm repository storage.googleapis.com.
+Adding missing Helm repo: jenkins-x-chartmuseum http://jenkins-x-chartmuseum:8080
+Successfully added Helm repository jenkins-x-chartmuseum.
+WARNING: No $CHART_REPOSITORY defined so using the default value of: http://jenkins-x-chartmuseum:8080
+Uploading chart file skiapp-0.0.43.tgz to http://jenkins-x-chartmuseum:8080/api/charts
+Received 201 response: {"saved":true}
+
+Showing logs for build [32mwei91007-skiapp-master-qpn6q-2[0m stage [32mfrom-build-pack[0m and container [32mstep-promote-jx-promote[0m
+WARNING: prow based install so skip waiting for the merge of Pull Requests to go green as currently there is an issue with gettingstatuses from the PR, see https://github.com/jenkins-x/**/issues/2410
+WARNING: No $CHART_REPOSITORY defined so using the default value of: http://jenkins-x-chartmuseum:8080
+Promoting app skiapp version 0.0.43 to namespace **-staging
+WARNING: 
+Created Pull Request: https://github.com/wei91004org/environment-wei91004-staging/pull/2
+Added label updatebot to Pull Request https://github.com/wei91004org/environment-wei91004-staging/pull/2
+got git provider status pending from PR https://github.com/wei91004org/environment-wei91004-staging/pull/2
+got git provider status pending from PR https://github.com/wei91004org/environment-wei91004-staging/pull/2
+got git provider status pending from PR https://github.com/wei91004org/environment-wei91004-staging/pull/2
+got git provider status pending from PR https://github.com/wei91004org/environment-wei91004-staging/pull/2
+got git provider status pending from PR https://github.com/wei91004org/environment-wei91004-staging/pull/2
+got git provider status pending from PR https://github.com/wei91004org/environment-wei91004-staging/pull/2
+Pull Request https://github.com/wei91004org/environment-wei91004-staging/pull/2 is merged at sha 08825d4167435bb85fb0dc9b15659fb4a3f5ee2e
+Pull Request merged but we are not waiting for the update pipeline to complete!
+WARNING: Could not find the service URL in namespace **-staging for names skiapp, **-skiapp, **-staging-skiapp
